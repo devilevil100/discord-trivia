@@ -33,6 +33,15 @@ export class BaseCustomQuestionBuilder {
     }
 
     /**
+     * Sets this question's image.
+     * @param {string} image
+     * @returns {this}
+     */
+    setImage(image: string): this {
+        this.data.image = image;
+        return this;
+    }
+    /**
      * Sets this question's category.
      * @param {string} category
      * @returns {this}
