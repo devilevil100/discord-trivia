@@ -263,7 +263,10 @@ export interface GameQuestion {
      * This question's difficulty level.
      */
     difficulty: QuestionDifficultyType;
-
+    /**
+     * This question's difficulty level.
+     */
+    image: string;
     /**
      * This question's type.
      */
