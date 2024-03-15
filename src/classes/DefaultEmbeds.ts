@@ -242,7 +242,7 @@ export default abstract class DefaultEmbeds {
      * @param {GameQuestion} question The question for this embed.
      * @returns {EmbedBuilder}
      */
-    static question(game: Game, question: GameQuestion): EmbedBuilder {
+    static question(game: Game, question: GameQuestion, image): EmbedBuilder {
         const playersAnswered = game.players.filter((p) => p.hasAnswered);
         const embed = new EmbedBuilder()
             .addFields(
@@ -253,7 +253,8 @@ export default abstract class DefaultEmbeds {
                 text: `You have ${
                     game.config.timePerQuestion / 1_000
                 } seconds to answer`
-            });
+            })
+            .setImage(image);
         if (question.type === QuestionTypes.Multiple)
             embed.addFields({
                 name: "Choices",
